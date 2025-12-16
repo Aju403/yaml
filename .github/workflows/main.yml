@@ -1,16 +1,25 @@
 name: my-demo
+
 on:
   push:
     branches:
-      -main
+      - main
   workflow_dispatch:
+
+env:
+  name: Arjun
+
 jobs:
-  build:
-    runs-on: hello
-
+  first_job:
+    runs-on: ubuntu-latest
     steps:
-     - name: Checkout
-       uses: actions/checkout@v6.0.1
+      - name: first step
+        run: echo "hi hello, I am $name"
 
-     - name: present directory
-       run: pwd
+  second_job:
+    runs-on: ubuntu-latest
+    env:
+      job: jobless
+    steps:
+      - name: first step
+        run: echo "hi, I am $name and I am $job"
