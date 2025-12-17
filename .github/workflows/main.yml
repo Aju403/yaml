@@ -29,3 +29,9 @@ jobs:
      steps:
        - name: show the repository
          run: echo "hi, this is the repo path"${{ github.repository }}
+
+       - name: architecture
+         run: echo " arc "${{ runner.arch }}
+
+       - name: shows the job status
+         run: echo "status "${{ job.status }} 
