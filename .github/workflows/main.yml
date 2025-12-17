@@ -23,3 +23,9 @@ jobs:
     steps:
       - name: first step
         run: echo "hi, I am $name and I am $job"
+
+  third_job:
+     runs-on: ubuntu-latest
+     steps:
+       - name: show the repository
+         run: echo "hi, this is the repo path"${{ github.repository }}
